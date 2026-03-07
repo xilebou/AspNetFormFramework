@@ -26,7 +26,7 @@ static class ApplicationFormExtension
 {
     public static void UseForms(this WebApplication app)
     {
-        FormGenerator<HomeController> generator = new FormGenerator<HomeController>(app);
-        generator.MapForm();
+        FormMapper<HomeController> mapper = new FormMapper<HomeController>(app);
+        mapper.MapForm();
     }
 }

@@ -4,7 +4,7 @@ namespace AspNetFormFramework.Forms;
 
 using static FormGeneration.Form;
 
-[Form("Test", "Test")]
+[Form]
 public class Test
 {
     [Input(Input.Text)]

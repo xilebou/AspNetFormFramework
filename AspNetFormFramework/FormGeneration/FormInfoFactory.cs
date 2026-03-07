@@ -12,11 +12,18 @@ public class FormInfoFactory
 
         // get name of form
         Form formAttribute = (Form)formType.GetCustomAttributes(typeof(Form), true).First();
-        formInfo.Name = formAttribute.Name;
+        formInfo.Name = formAttribute.Name ?? formType.Name;
 
         // get inputs of form
-
         List<(string Label, string InputType)> inputs = new List<(string Label, string InputType)>();
+        inputs.AddRange(ExtractInputs(formType));
+        formInfo.Inputs = inputs;
+
+        return formInfo;
+    }
+
+    private IEnumerable<(string, string)> ExtractInputs(Type formType)
+    {
         foreach (var property in formType.GetProperties())
         {
             if (!property.GetCustomAttributes(true).Contains(typeof(Form.Ignore)))
@@ -24,17 +31,13 @@ public class FormInfoFactory
                 Form.Input? input = property.GetCustomAttributes(typeof(Form.Input), true).OfType<Form.Input>()
                     .FirstOrDefault();
 
-                inputs.Add(
+                yield return
                     (
                         input?.Label ?? property.Name,
                         input?.InputType ?? "text"
-                        )
-                );
+                    )
+                    ;
             }
         }
-
-        formInfo.Inputs = inputs;
-
-        return formInfo;
     }
 }

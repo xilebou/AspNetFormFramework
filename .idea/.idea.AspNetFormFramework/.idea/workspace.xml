@@ -6,15 +6,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="466dfad6-b01a-4399-a630-78288b72088f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormInfoFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AspNetFormFramework/ViewModels/FormInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AspNetFormFramework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AspNetFormFramework/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Controllers/HomeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/Form.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/Form.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormMapper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Forms/Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Forms/Test.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Views/Home/Form.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Views/Home/Form.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,8 +124,17 @@
       <workItem from="1772892837528" duration="3000" />
       <workItem from="1772892849781" duration="1000" />
       <workItem from="1772892859095" duration="20000" />
-      <workItem from="1772892890388" duration="2974000" />
+      <workItem from="1772892890388" duration="3592000" />
     </task>
+    <task id="LOCAL-00001" summary="Make form actually work">
+      <option name="closed" value="true" />
+      <created>1772896024996</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1772896024997</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +144,8 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Make form actually work" />
+    <option name="LAST_COMMIT_MESSAGE" value="Make form actually work" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -156,6 +162,19 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/AspNetFormFramework/Controllers/HomeController.cs</url>
+          <line>21</line>
+          <properties documentPath="$PROJECT_DIR$/AspNetFormFramework/Controllers/HomeController.cs" containingFunctionPresentation="Method 'Form'">
+            <startOffsets>
+              <option value="524" />
+            </startOffsets>
+            <endOffsets>
+              <option value="581" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
