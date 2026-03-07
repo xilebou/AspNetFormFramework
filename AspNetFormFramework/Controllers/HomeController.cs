@@ -9,18 +9,12 @@ namespace AspNetFormFramework.Controllers;
 public class HomeController : Controller, IFormController
 {
     
-    [Route("/Index")]
-    public IActionResult Index()
-    {
-        return View();
-    }
-    
     public IActionResult Form()
     {
-        string type = HttpContext.Request.Path.ToString().Split("/").Last();
-        type = type.Substring(0,1).ToUpper() + type.Substring(1);
-        Type? formType = Type.GetType("AspNetFormFramework.Forms." + type );
-        FormInfo viewModel = new FormInfoFactory().CreateForm(formType);
+        string type = HttpContext.Request.Path.ToString();
+        FormInfo viewModel = new FormInfoFactory().CreateForm(
+            FormMapper<HomeController>.GetFormType(typeof(HomeController), type)
+            );
         
         return View(model: viewModel);
     }

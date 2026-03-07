@@ -6,12 +6,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="466dfad6-b01a-4399-a630-78288b72088f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/AspNetFormFramework.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/AspNetFormFramework.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AspNetFormFramework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AspNetFormFramework/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Controllers/HomeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/ViewModels/ErrorViewModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/ViewModels/FormInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Views/Home/Index.cshtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Views/Home/TestDefault.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormMapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Forms/Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Forms/Test.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +64,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Launch Settings Profile.AspNetFormFramework: http.executor": "Run",
+    ".NET Launch Settings Profile.AspNetFormFramework: http.executor": "Debug",
     "DefaultHtmlFileTemplate": "HTML File",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -126,7 +125,7 @@
       <workItem from="1772892837528" duration="3000" />
       <workItem from="1772892849781" duration="1000" />
       <workItem from="1772892859095" duration="20000" />
-      <workItem from="1772892890388" duration="3911000" />
+      <workItem from="1772892890388" duration="6315000" />
     </task>
     <task id="LOCAL-00001" summary="Make form actually work">
       <option name="closed" value="true" />
@@ -144,7 +143,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772896757304</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Remove unused files">
+      <option name="closed" value="true" />
+      <created>1772896814714</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1772896814714</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,7 +163,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Make form actually work" />
     <MESSAGE value="Refactor to make code more readable" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor to make code more readable" />
+    <MESSAGE value="Remove unused files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove unused files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -175,18 +183,49 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/AspNetFormFramework/Controllers/HomeController.cs</url>
-          <line>20</line>
+          <line>14</line>
           <properties documentPath="$PROJECT_DIR$/AspNetFormFramework/Controllers/HomeController.cs" containingFunctionPresentation="Method 'Form'">
             <startOffsets>
-              <option value="491" />
+              <option value="378" />
             </startOffsets>
             <endOffsets>
-              <option value="548" />
+              <option value="528" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="11" />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormMapper.cs</url>
+          <line>26</line>
+          <properties documentPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormMapper.cs" containingFunctionPresentation="Method 'MapForm'">
+            <startOffsets>
+              <option value="831" />
+            </startOffsets>
+            <endOffsets>
+              <option value="869" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormMapper.cs</url>
+          <line>41</line>
+          <properties documentPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormMapper.cs" containingFunctionPresentation="Method 'GetFormType'">
+            <startOffsets>
+              <option value="1403" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1446" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Type#System.Collections.Generic.DebugViewDictionaryItem`2" memberName="Value" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

@@ -1,6 +1,7 @@
 using System.Reflection;
 using AspNetFormFramework.Controllers;
 using AspNetFormFramework.FormGeneration;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +14,7 @@ var app = builder.Build();
 
 app.UseRouting();
 
-app.UseForms();
+app.UseForms<HomeController>();
 app.MapStaticAssets();
 
 app.MapControllers();
@@ -24,9 +25,9 @@ app.Run();
 
 static class ApplicationFormExtension
 {
-    public static void UseForms(this WebApplication app)
+    public static void UseForms<T>(this WebApplication app) where T : IFormController
     {
-        FormMapper<HomeController> mapper = new FormMapper<HomeController>(app);
+        FormMapper<T> mapper = new FormMapper<T>(app);
         mapper.MapForm();
     }
 }
