@@ -8,21 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="466dfad6-b01a-4399-a630-78288b72088f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/Utils/AttributeFinder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AspNetFormFramework/Forms/AlexForm.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AspNetFormFramework/RouteGeneration/RouteFor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestApp/Controller/TestController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestApp/Forms/NewForm.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AspNetFormFramework/Controllers/BaseFormController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AspNetFormFramework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AspNetFormFramework/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework.sln" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/AspNetFormFramework.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/AspNetFormFramework.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Controllers/HomeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormInfoFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormInfoFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormMapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Forms/Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Forms/Test.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Views/Home/Form.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Views/Shared/Form.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,10 +56,10 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/eb33345a43bd4569b2d0a521668611b3d000/57/fc94d00a/TagHelperExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/eb37e0a67cf74b909bb6fad02b6037131d600/cf/eaae0bd9/IServiceCollection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/eb37e0a67cf74b909bb6fad02b6037131d600/d2/09740114/ServiceDescriptor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AspNetFormFramework/Controllers/BaseFormController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AspNetFormFramework/FormGeneration/Form.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormInfoFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AspNetFormFramework/FormGeneration/IFormController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AspNetFormFramework/Forms/AlexForm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AspNetFormFramework/RouteGeneration/RouteFor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TestApp/Controller/TestController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TestApp/Forms/NewForm.cs" root0="FORCE_HIGHLIGHTING" />
@@ -88,7 +76,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     ".NET Launch Settings Profile.AspNetFormFramework: http.executor": "Run",
-    ".NET Launch Settings Profile.TestApp: http.executor": "Debug",
+    ".NET Launch Settings Profile.TestApp: http.executor": "Run",
     "DefaultHtmlFileTemplate": "HTML File",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -215,7 +203,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772901727092</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Handle sending forms">
+      <option name="closed" value="true" />
+      <created>1772908249862</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1772908249862</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,7 +225,8 @@
     <MESSAGE value="Refactor to make code more readable" />
     <MESSAGE value="Remove unused files" />
     <MESSAGE value="Add gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add gitignore" />
+    <MESSAGE value="Handle sending forms" />
+    <option name="LAST_COMMIT_MESSAGE" value="Handle sending forms" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -246,19 +243,6 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormMapper.cs</url>
-          <line>85</line>
-          <properties documentPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormMapper.cs" containingFunctionPresentation="Method 'GetTypesWithFormAttribute'">
-            <startOffsets>
-              <option value="2803" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2863" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>

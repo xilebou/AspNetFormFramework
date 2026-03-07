@@ -64,7 +64,7 @@ public class FormMapper<T>(WebApplication app)
         return null;
     }
 
-    private string GetControllerName()
+    public static string GetControllerName()
     {
         string controllerName = typeof(T).Name;
         controllerName = controllerName.Replace("Controller", "");
