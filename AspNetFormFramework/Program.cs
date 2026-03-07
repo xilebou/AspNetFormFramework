@@ -1,4 +1,5 @@
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using AspNetFormFramework.Controllers;
 using AspNetFormFramework.FormGeneration;
 using Microsoft.AspNetCore.Mvc;

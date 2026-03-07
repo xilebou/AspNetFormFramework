@@ -1,6 +1,7 @@
 using System.Dynamic;
 using System.Reflection;
 using System.Reflection.Emit;
+using AspNetFormFramework.FormGeneration.Utils;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetFormFramework.FormGeneration;
@@ -8,11 +9,14 @@ namespace AspNetFormFramework.FormGeneration;
 public class FormMapper<T>(WebApplication app)
     where T : IFormController
 {
-    private static Dictionary<Type, Dictionary<string, Type>> _formTypes = new (); 
+    private static Dictionary<Type, Dictionary<string, Type>> _formTypes = new();
     
-    public void MapForm()   
+    
+    public void MapForm()
     {
-        foreach (Type formType in GetTypesWithFormAttribute())
+        Assembly assembly = typeof(T).Assembly;
+        
+        foreach (Type formType in GetTypesWithFormAttribute(assembly))
         {
             string controllerName = GetControllerName();
             (string name, string pattern) nameAndPattern = GetNameAndPattern(formType, controllerName);
@@ -23,6 +27,11 @@ public class FormMapper<T>(WebApplication app)
                 defaults: new { controller = controllerName, action = "Form" }
             );
 
+
+            app.MapControllerRoute(
+                name: "Send" + nameAndPattern.name,
+                pattern: nameAndPattern.pattern + "/send"
+            );
 
             RegisterFormType(nameAndPattern, formType);
         }
@@ -36,7 +45,7 @@ public class FormMapper<T>(WebApplication app)
         }
         else // else create new dictionary for controller
         {
-            Dictionary<string, Type> patternToTypes = new ();
+            Dictionary<string, Type> patternToTypes = new();
             patternToTypes.Add(nameAndPattern.pattern, formType);
             _formTypes.Add(typeof(T), patternToTypes);
         }
@@ -50,7 +59,8 @@ public class FormMapper<T>(WebApplication app)
             {
                 return _formTypes[controllerType][pattern];
             }
-        } 
+        }
+
         return null;
     }
 
@@ -63,23 +73,15 @@ public class FormMapper<T>(WebApplication app)
 
     private (string name, string pattern) GetNameAndPattern(Type type, string controllerName)
     {
-        var attributes = type.GetCustomAttributes();
-        string name = "";
-        string pattern = "/" + controllerName.ToLower() + "/";
-        foreach (var attribute in attributes)
-        {
-            if (attribute is Form formAttribute)
-            {
-                name += formAttribute.Name ?? type.Name;
-                pattern += formAttribute.Route?.ToLower() ??  type.Name.ToLower();
-            }
-        }
-        return (name, pattern);
+        AttributeFinder attributeFinder = new AttributeFinder(type);
+        return (attributeFinder.FindName(), attributeFinder.FindPattern(controllerName));
     }
 
-    private IEnumerable<Type> GetTypesWithFormAttribute()
+    private IEnumerable<Type> GetTypesWithFormAttribute(Assembly assembly)
     {
-        foreach (Type type in Assembly.GetAssembly(typeof(Form)).GetTypes())
+        foreach (Type type in assembly.GetTypes()
+                     .Where(t => t.GetCustomAttributes()
+                         .Any(attribute => attribute.GetType() == typeof(Form))))
         {
             if (type.GetCustomAttributes(typeof(Form), true).Length > 0)
             {

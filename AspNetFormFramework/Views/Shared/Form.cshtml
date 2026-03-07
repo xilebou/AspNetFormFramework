@@ -10,7 +10,7 @@
 <div>
     <h1>Voici le formulaire de @Model.Name</h1>
     <div>
-        <form action="http://localhost:5013/send" method="post">
+        <form action="@Model.BaseUrl@(Model.PostRoute)/send" method="post">
             @{
                 int i = 0;
 
@@ -22,7 +22,7 @@
                     i++;
                 }
             }
-
+            <button type="submit">submit</button>
         </form>
     </div>
 </div>

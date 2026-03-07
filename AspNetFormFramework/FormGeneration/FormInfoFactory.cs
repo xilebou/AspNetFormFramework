@@ -1,11 +1,12 @@
 using System.Reflection.Emit;
+using AspNetFormFramework.FormGeneration.Utils;
 using AspNetFormFramework.ViewModels;
 
 namespace AspNetFormFramework.FormGeneration;
 
 public class FormInfoFactory
 {
-    public FormInfo CreateForm(Type? formType)
+    public FormInfo CreateForm(Type? formType, string controllerName, string baseUrl)
     {
         if (formType is null) throw new ArgumentNullException("formType");
         FormInfo formInfo = new FormInfo();
@@ -18,7 +19,13 @@ public class FormInfoFactory
         List<(string Label, string InputType)> inputs = new List<(string Label, string InputType)>();
         inputs.AddRange(ExtractInputs(formType));
         formInfo.Inputs = inputs;
+        
+        // get route of form
+        formInfo.PostRoute = new AttributeFinder(formType).FindPattern(controllerName);
 
+        // get base url
+        formInfo.BaseUrl = baseUrl;
+        
         return formInfo;
     }
 
