@@ -1,0 +1,29 @@
+﻿@model AspNetFormFramework.FormGeneration.Form;
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>@Model.Name</title>
+</head>
+<body>
+<div>
+    <h1>Voici le formulaire de @Model.Name</h1>
+    <div>
+        <form action="http://localhost:5013/send" method="post">
+            @{
+                int i = 0;
+
+                foreach (var input in Model.FormInputs)
+                {
+                    <label for="@i">Test</label>
+                    <input id="@i" type="@input.InputType"/>
+                    i++;
+                }
+            }
+
+        </form>
+    </div>
+</div>
+</body>
+</html>
