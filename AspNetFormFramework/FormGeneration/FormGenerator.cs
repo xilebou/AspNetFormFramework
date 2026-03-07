@@ -14,7 +14,7 @@ public class FormGenerator<T> where T : ControllerBase
         _app = app;
     }
     
-    public void CreateForm()
+    public void MapForm()
     {
         foreach (Type type in GetTypesWithFormAttribute())
         {
@@ -27,18 +27,6 @@ public class FormGenerator<T> where T : ControllerBase
                 {
                     name = formAttribute.Name;
                     pattern = formAttribute.Route; 
-                    
-                    
-                    foreach (var property in type.GetProperties())
-                    {
-                        foreach (var propretyAttribute in property.GetCustomAttributes())
-                        {
-                            if (propretyAttribute is Form.Input inputAttribute)
-                            {
-                                formAttribute.FormInputs.Add(inputAttribute);
-                            }
-                        }
-                    }
                 }
             }
 

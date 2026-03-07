@@ -5,7 +5,17 @@
     <projectFile profileName="https">AspNetFormFramework/AspNetFormFramework.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="466dfad6-b01a-4399-a630-78288b72088f" name="Changes" comment="" />
+    <list default="true" id="466dfad6-b01a-4399-a630-78288b72088f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormInfoFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AspNetFormFramework/ViewModels/FormInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AspNetFormFramework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AspNetFormFramework/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/Form.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/Form.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Forms/Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Forms/Test.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Views/Home/Form.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Views/Home/Form.cshtml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,6 +34,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "xilebou"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/xilebou/AspNetFormFramework.git",
+    "accountId": "2c926787-6262-443a-a5a2-61fffea470cf"
+  }
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/23f471448fc34b87b883e21e9dc0ecab1d3e00/59/c83553ef/AttributeRouteModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/23f471448fc34b87b883e21e9dc0ecab1d3e00/a9/65f74624/RouteAttribute.cs" root0="FORCE_HIGHLIGHTING" />
@@ -31,7 +53,9 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/23f471448fc34b87b883e21e9dc0ecab1d3e00/fa/4825a192/DefaultApplicationModelProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a1acd29f341349028f9cc74e2cda718eae000/fc/6d5162bc/Controller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AspNetFormFramework/FormGeneration/Form.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormInfoFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AspNetFormFramework/FormGeneration/IFormController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AspNetFormFramework/ViewModels/FormInfo.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -44,7 +68,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Launch Settings Profile.AspNetFormFramework: http.executor": "Run",
+    ".NET Launch Settings Profile.AspNetFormFramework: http.executor": "Debug",
     "DefaultHtmlFileTemplate": "HTML File",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -105,7 +129,7 @@
       <workItem from="1772892837528" duration="3000" />
       <workItem from="1772892849781" duration="1000" />
       <workItem from="1772892859095" duration="20000" />
-      <workItem from="1772892890388" duration="46000" />
+      <workItem from="1772892890388" duration="2974000" />
     </task>
     <servers />
   </component>
@@ -132,19 +156,6 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormGenerator.cs</url>
-          <line>32</line>
-          <properties documentPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormGenerator.cs" containingFunctionPresentation="Method 'CreateForm'">
-            <startOffsets>
-              <option value="930" />
-            </startOffsets>
-            <endOffsets>
-              <option value="931" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

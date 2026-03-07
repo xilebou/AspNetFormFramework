@@ -7,7 +7,6 @@ public class Form : Attribute
 {
     public string? Name { get; set; }
     public string? Route { get; set; }
-    public List<Input> FormInputs { get; set; } =  new List<Input>();
     
     public Form(string? name = null, string? url = null)
     {
@@ -31,5 +30,10 @@ public class Form : Attribute
             Label = label;
             InputType = inputType;
         }
+    }
+
+    public class Ignore : Attribute
+    {
+        
     }
 }

@@ -1,4 +1,4 @@
-﻿@model AspNetFormFramework.FormGeneration.Form;
+﻿@model AspNetFormFramework.ViewModels.FormInfo;
 
 <!DOCTYPE html>
 
@@ -14,10 +14,11 @@
             @{
                 int i = 0;
 
-                foreach (var input in Model.FormInputs)
+                foreach (var input in Model.Inputs ?? new List<(string, string)>())
                 {
-                    <label for="@i">Test</label>
-                    <input id="@i" type="@input.InputType"/>
+                    <label for="@i">@input.label</label>
+                    <input id="@i" type="@input.inputType"/>
+                    <br/>
                     i++;
                 }
             }
