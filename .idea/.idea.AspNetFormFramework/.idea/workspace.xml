@@ -6,10 +6,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="466dfad6-b01a-4399-a630-78288b72088f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.AspNetFormFramework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AspNetFormFramework/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormMapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Forms/Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Forms/Test.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/AspNetFormFramework.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/AspNetFormFramework.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/ViewModels/ErrorViewModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/ViewModels/FormInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Views/Home/Index.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Views/Home/TestDefault.cshtml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +65,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Launch Settings Profile.AspNetFormFramework: http.executor": "Debug",
+    ".NET Launch Settings Profile.AspNetFormFramework: http.executor": "Run",
     "DefaultHtmlFileTemplate": "HTML File",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -124,7 +126,7 @@
       <workItem from="1772892837528" duration="3000" />
       <workItem from="1772892849781" duration="1000" />
       <workItem from="1772892859095" duration="20000" />
-      <workItem from="1772892890388" duration="3592000" />
+      <workItem from="1772892890388" duration="3911000" />
     </task>
     <task id="LOCAL-00001" summary="Make form actually work">
       <option name="closed" value="true" />
@@ -134,7 +136,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772896024997</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Refactor to make code more readable">
+      <option name="closed" value="true" />
+      <created>1772896757304</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1772896757304</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,7 +155,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Make form actually work" />
-    <option name="LAST_COMMIT_MESSAGE" value="Make form actually work" />
+    <MESSAGE value="Refactor to make code more readable" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor to make code more readable" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -164,13 +175,13 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/AspNetFormFramework/Controllers/HomeController.cs</url>
-          <line>21</line>
+          <line>20</line>
           <properties documentPath="$PROJECT_DIR$/AspNetFormFramework/Controllers/HomeController.cs" containingFunctionPresentation="Method 'Form'">
             <startOffsets>
-              <option value="524" />
+              <option value="491" />
             </startOffsets>
             <endOffsets>
-              <option value="581" />
+              <option value="548" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="11" />
