@@ -4,13 +4,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetFormFramework.Controllers;
 
-abstract public class  BaseFormController: Controller, IFormController
+public abstract class  BaseFormController: Controller, IFormController
 {
     public IActionResult Form()
     {
-        string type = HttpContext.Request.Path.ToString();
         FormInfo viewModel = new FormInfoFactory().CreateForm(
-            FormMapper<HomeController>.GetFormType(typeof(HomeController), type),
+            GetFormType(),
             GetName(),
             (Request.Scheme + "://" + Request.Host)
         );
@@ -19,4 +18,5 @@ abstract public class  BaseFormController: Controller, IFormController
     }
 
     protected abstract string GetName();
+    protected abstract Type? GetFormType();
 }

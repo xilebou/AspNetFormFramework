@@ -5,17 +5,17 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace TestApp.Controller;
 
-public class TestController: Microsoft.AspNetCore.Mvc.Controller, IFormController
+public class TestController: BaseFormController
 {
-    public IActionResult Form()
+
+    protected override string GetName()
+    {
+        return "Test";
+    }
+
+    protected override Type? GetFormType()
     {
         string type = HttpContext.Request.Path.ToString();
-        FormInfo viewModel = new FormInfoFactory().CreateForm(
-            FormMapper<TestController>.GetFormType(typeof(TestController), type),
-            "Test",
-            (Request.Scheme + "://" + Request.Host)
-        );
-
-        return View(model: viewModel);
+        return FormMapper<TestController>.GetFormType(this.GetType(), type);
     }
 }

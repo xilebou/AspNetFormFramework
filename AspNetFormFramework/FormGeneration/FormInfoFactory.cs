@@ -1,3 +1,4 @@
+using System.Reflection;
 using System.Reflection.Emit;
 using AspNetFormFramework.FormGeneration.Utils;
 using AspNetFormFramework.ViewModels;
@@ -41,10 +42,28 @@ public class FormInfoFactory
                 yield return
                     (
                         input?.Label ?? property.Name,
-                        input?.InputType ?? "text"
-                    )
-                    ;
+                        input?.InputType ?? GetInputTypeFromReturnType(property)
+                    );
             }
+        }
+    }
+
+    private string GetInputTypeFromReturnType(PropertyInfo property)
+    {
+        Type inputReturnType = property.PropertyType;
+        switch (inputReturnType.Name)
+        {
+            case "String": return "text";
+            case "Double": return "number";
+            case "Decimal": return "number";
+            case "Int32": return "number";
+            case "Int64": return "number";
+            case "Int16": return "number";
+            case "Int8": return "number";
+            case "Boolean": return "boolean";
+            case "DateTime": return "date";
+            case "Guid": return "guid";
+            default: return "text";
         }
     }
 }
