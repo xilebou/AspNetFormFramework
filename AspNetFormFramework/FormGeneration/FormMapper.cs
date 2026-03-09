@@ -65,8 +65,8 @@ public class FormMapper(WebApplication app): IFormMapper
 
     private (string name, string pattern) GetNameAndPattern(Type type, string controllerName)
     {
-        AttributeFinder attributeFinder = new AttributeFinder(type);
-        return (attributeFinder.FindName(), attributeFinder.FindPattern(controllerName));
+        FormAttributeFinder formAttributeFinder = new FormAttributeFinder(type);
+        return (formAttributeFinder.FindName(), formAttributeFinder.FindPattern(controllerName));
     }
 
     private IEnumerable<Type> GetTypesWithFormAttribute(Assembly assembly)

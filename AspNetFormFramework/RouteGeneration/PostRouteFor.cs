@@ -6,9 +6,5 @@ using Microsoft.Extensions.FileSystemGlobbing.Internal.Patterns;
 
 namespace AspNetFormFramework.RouteGeneration;
 
-public class RouteFor: RouteAttribute
-{
-    public RouteFor(string controller, Type type) : base(new AttributeFinder(type).FindPattern(controller) + "/send")
-    {
-    }
-}
+public class PostRouteFor(string controller, Type type)
+    : RouteAttribute(new FormAttributeFinder(type).FindPattern(controller) + "/send");

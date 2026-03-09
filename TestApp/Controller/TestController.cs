@@ -15,7 +15,7 @@ public class TestController: BaseFormController
 
 
 
-    [RouteFor(Name, typeof(Bob))]
+    [PostRouteFor(Name, typeof(Bob))]
     [HttpPost]
     public IActionResult GetBob(Bob bob)
     {

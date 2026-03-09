@@ -22,7 +22,7 @@ public class FormInfoFactory
         formInfo.Inputs = inputs;
         
         // get route of form
-        formInfo.PostRoute = new AttributeFinder(formType).FindPattern(controllerName);
+        formInfo.PostRoute = new FormAttributeFinder(formType).FindPattern(controllerName);
 
         // get base url
         formInfo.BaseUrl = baseUrl;

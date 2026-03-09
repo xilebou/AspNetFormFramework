@@ -23,7 +23,7 @@ public class HomeController : Controller, IFormController
         return View(model: viewModel);
     }
 
-    [RouteFor("Home", typeof(Test))]
+    [PostRouteFor("Home", typeof(Test))]
     public IActionResult TestSend()
     {
         return Content("Send success");

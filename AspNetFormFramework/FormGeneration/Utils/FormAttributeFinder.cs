@@ -2,10 +2,10 @@ using System.Reflection;
 
 namespace AspNetFormFramework.FormGeneration.Utils;
 
-public class AttributeFinder
+public class FormAttributeFinder
 {
     private Type _formType;
-    public AttributeFinder(Type formType)
+    public FormAttributeFinder(Type formType)
     {
         _formType = formType;
     }
