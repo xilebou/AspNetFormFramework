@@ -6,19 +6,18 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetFormFramework.FormGeneration;
 
-public class FormMapper<T>(WebApplication app): IFormMapper
-    where T : IFormController
+public class FormMapper(WebApplication app): IFormMapper
 {
     private static Dictionary<Type, Dictionary<string, Type>> _formTypes = new();
     
     
-    public void MapForms()
+    public void MapForms(Type controller)
     {
-        Assembly assembly = typeof(T).Assembly;
+        Assembly assembly = controller.Assembly;
         
         foreach (Type formType in GetTypesWithFormAttribute(assembly))
         {
-            string controllerName = GetControllerName();
+            string controllerName = ControllerNameParser.GetControllerName(controller);
             (string name, string pattern) nameAndPattern = GetNameAndPattern(formType, controllerName);
 
             app.MapControllerRoute(
@@ -33,21 +32,21 @@ public class FormMapper<T>(WebApplication app): IFormMapper
                 pattern: nameAndPattern.pattern + "/send"
             );
 
-            RegisterFormType(nameAndPattern, formType);
+            RegisterFormType(nameAndPattern, formType, controller);
         }
     }
 
-    private void RegisterFormType((string name, string pattern) nameAndPattern, Type formType)
+    private void RegisterFormType((string name, string pattern) nameAndPattern, Type formType, Type controllerType)
     {
-        if (_formTypes.ContainsKey(typeof(T))) // if form already contains controller
+        if (_formTypes.ContainsKey(controllerType)) // if form already contains controller
         {
-            _formTypes[typeof(T)].Add(nameAndPattern.pattern, formType);
+            _formTypes[controllerType].Add(nameAndPattern.pattern, formType);
         }
         else // else create new dictionary for controller
         {
             Dictionary<string, Type> patternToTypes = new();
             patternToTypes.Add(nameAndPattern.pattern, formType);
-            _formTypes.Add(typeof(T), patternToTypes);
+            _formTypes.Add(controllerType, patternToTypes);
         }
     }
 
@@ -62,13 +61,6 @@ public class FormMapper<T>(WebApplication app): IFormMapper
         }
 
         return null;
-    }
-
-    public static string GetControllerName()
-    {
-        string controllerName = typeof(T).Name;
-        controllerName = controllerName.Replace("Controller", "");
-        return controllerName;
     }
 
     private (string name, string pattern) GetNameAndPattern(Type type, string controllerName)
@@ -91,17 +83,17 @@ public class FormMapper<T>(WebApplication app): IFormMapper
     }
 }
 
-public class FormMapper: IFormMapper
-{
-    private FormMapper<IFormController> _formMapper;
-
-    public FormMapper(WebApplication app)
-    {
-        _formMapper = new FormMapper<IFormController>(app);
-    }
-
-    public void MapForms()
-    {
-        _formMapper.MapForms();
-    }
-}
+// public class FormMapper: IFormMapper
+// {
+//     private FormMapper<IFormController> _formMapper;
+//
+//     public FormMapper(WebApplication app)
+//     {
+//         _formMapper = new FormMapper<IFormController>(app);
+//     }
+//
+//     public void MapForms()
+//     {
+//         _formMapper.MapForms();
+//     }
+// }

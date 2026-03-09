@@ -15,7 +15,7 @@ public class HomeController : Controller, IFormController
     {
         string type = HttpContext.Request.Path.ToString();
         FormInfo viewModel = new FormInfoFactory().CreateForm(
-            FormMapper<HomeController>.GetFormType(typeof(HomeController), type),
+            FormMapper.GetFormType(typeof(HomeController), type),
             "Home",
             (Request.Scheme + "://" + Request.Host)
         );

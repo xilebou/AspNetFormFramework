@@ -12,8 +12,9 @@ public class FormFiller<T>(HttpContext httpContext)
         }
     }
 
-    private object? ConvertStringTo(string value, Type type)
+    private object? ConvertStringTo(string? value, Type type)
     {
+        if (value == null) return null;
         if (type == typeof(string)) return value;
         else if (type == typeof(Int32)) return Int32.Parse(value);
         else if (type == typeof(Int64)) return Int64.Parse(value);

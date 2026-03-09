@@ -1,6 +1,7 @@
 using System.Runtime.CompilerServices;
 using AspNetFormFramework.Controllers;
 using AspNetFormFramework.FormGeneration;
+using AspNetFormFramework.FormGeneration.Utils;
 using AspNetFormFramework.RouteGeneration;
 using AspNetFormFramework.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -12,16 +13,7 @@ public class TestController: BaseFormController
 {
     public const string Name = "Test";
 
-    protected override string GetName()
-    {
-        return Name;
-    }
 
-    protected override Type? GetFormType()
-    {
-        string type = HttpContext.Request.Path.ToString();
-        return FormMapper<TestController>.GetFormType(this.GetType(), type);
-    }
 
     [RouteFor(Name, typeof(Bob))]
     [HttpPost]

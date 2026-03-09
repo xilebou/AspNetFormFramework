@@ -1,4 +1,5 @@
 using AspNetFormFramework.FormGeneration;
+using AspNetFormFramework.FormGeneration.Utils;
 using AspNetFormFramework.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,6 +18,14 @@ public abstract class  BaseFormController: Controller, IFormController
         return View(model: viewModel);
     }
 
-    protected abstract string GetName();
-    protected abstract Type? GetFormType();
+    protected virtual string GetName()
+    {
+        return ControllerNameParser.GetControllerName(GetType());
+    }
+
+    protected virtual Type? GetFormType()
+    {
+        string type = HttpContext.Request.Path.ToString();
+        return FormMapper.GetFormType(this.GetType(), type);
+    }
 }

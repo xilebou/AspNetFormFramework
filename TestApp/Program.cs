@@ -24,7 +24,7 @@ static class ApplicationFormExtension
 {
     public static void UseForms<T>(this WebApplication app) where T : IFormController
     {
-        FormMapper<T> mapper = new FormMapper<T>(app);
-        mapper.MapForms();
+        FormMapper mapper = new FormMapper(app);
+        mapper.MapForms(typeof(T));
     }
 }
