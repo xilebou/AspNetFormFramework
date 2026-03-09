@@ -10,14 +10,14 @@
 <div>
     <h1>Voici le formulaire de @Model.Name</h1>
     <div>
-        <form action="@Model.BaseUrl@(Model.PostRoute)/send" method="post">
+        <form action="@Model.BaseUrl@(Model.PostRoute)/send" method="POST">
             @{
                 int i = 0;
 
-                foreach (var input in Model.Inputs ?? new List<(string, string)>())
+                foreach (var input in Model.Inputs ?? new ())
                 {
                     <label for="@i">@input.label</label>
-                    <input id="@i" type="@input.inputType"/>
+                    <input id="@i" type="@input.inputType" name="@input.name" />
                     <br/>
                     i++;
                 }

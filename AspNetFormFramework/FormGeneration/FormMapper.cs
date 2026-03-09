@@ -6,13 +6,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetFormFramework.FormGeneration;
 
-public class FormMapper<T>(WebApplication app)
+public class FormMapper<T>(WebApplication app): IFormMapper
     where T : IFormController
 {
     private static Dictionary<Type, Dictionary<string, Type>> _formTypes = new();
     
     
-    public void MapForm()
+    public void MapForms()
     {
         Assembly assembly = typeof(T).Assembly;
         
@@ -88,5 +88,20 @@ public class FormMapper<T>(WebApplication app)
                 yield return type;
             }
         }
+    }
+}
+
+public class FormMapper: IFormMapper
+{
+    private FormMapper<IFormController> _formMapper;
+
+    public FormMapper(WebApplication app)
+    {
+        _formMapper = new FormMapper<IFormController>(app);
+    }
+
+    public void MapForms()
+    {
+        _formMapper.MapForms();
     }
 }

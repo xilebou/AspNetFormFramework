@@ -17,7 +17,7 @@ public class FormInfoFactory
         formInfo.Name = formAttribute.Name ?? formType.Name;
 
         // get inputs of form
-        List<(string Label, string InputType)> inputs = new List<(string Label, string InputType)>();
+        List<(string Label, string InputType, string Name)> inputs = new ();
         inputs.AddRange(ExtractInputs(formType));
         formInfo.Inputs = inputs;
         
@@ -30,7 +30,7 @@ public class FormInfoFactory
         return formInfo;
     }
 
-    private IEnumerable<(string, string)> ExtractInputs(Type formType)
+    private IEnumerable<(string, string, string)> ExtractInputs(Type formType)
     {
         foreach (var property in formType.GetProperties())
         {
@@ -42,7 +42,8 @@ public class FormInfoFactory
                 yield return
                     (
                         input?.Label ?? property.Name,
-                        input?.InputType ?? GetInputTypeFromReturnType(property)
+                        input?.InputType ?? GetInputTypeFromReturnType(property),
+                        property.Name
                     );
             }
         }
