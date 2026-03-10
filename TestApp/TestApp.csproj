@@ -10,8 +10,4 @@
       <ProjectReference Include="..\AspNetFormFramework\AspNetFormFramework.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="wwwroot\" />
-    </ItemGroup>
-
 </Project>

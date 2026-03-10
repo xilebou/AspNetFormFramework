@@ -1,0 +1,27 @@
+div {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    min-width: 70%;
+    flex-grow: 3;
+}
+
+.left {
+    width: 15%;
+    flex-grow: 2;
+}
+
+.right {
+    width: 15%;
+    flex-grow: 2;
+}
+

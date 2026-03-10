@@ -13,6 +13,7 @@ var app = builder.Build();
 app.UseRouting();
 
 app.UseForms<TestController>();
+app.MapStaticAssets();
 
 app.MapControllers();
 

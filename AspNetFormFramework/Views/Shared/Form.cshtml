@@ -5,19 +5,22 @@
 <html lang="en">
 <head>
     <title>@Model.Name</title>
+    <link rel="stylesheet" href="~/form.css">
 </head>
 <body>
-<div>
-    <h1>Voici le formulaire de @Model.Name</h1>
-    <div>
+<div class="row">
+    <div></div>
+    <div class="main">
+        <h1>Voici le formulaire de @Model.Name</h1>
+
         <form action="@Model.BaseUrl@(Model.PostRoute)/send" method="POST">
             @{
                 int i = 0;
 
-                foreach (var input in Model.Inputs ?? new ())
+                foreach (var input in Model.Inputs ?? new())
                 {
                     <label for="@i">@input.label</label>
-                    <input id="@i" type="@input.inputType" name="@input.name" />
+                    <input id="@i" type="@input.inputType" name="@input.name"/>
                     <br/>
                     i++;
                 }
@@ -25,6 +28,7 @@
             <button type="submit">submit</button>
         </form>
     </div>
+    <div></div>
 </div>
 </body>
 </html>

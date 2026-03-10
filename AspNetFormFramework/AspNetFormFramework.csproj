@@ -77,4 +77,8 @@
       <_ContentIncludedByDefault Remove="wwwroot\css\form.css" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Include="wwwroot\form.css" />
+    </ItemGroup>
+
 </Project>
