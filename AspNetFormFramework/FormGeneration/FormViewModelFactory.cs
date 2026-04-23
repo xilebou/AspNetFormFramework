@@ -2,41 +2,47 @@ using System.Reflection;
 using System.Reflection.Emit;
 using AspNetFormFramework.FormGeneration.Utils;
 using AspNetFormFramework.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetFormFramework.FormGeneration;
 
-public class FormInfoFactory
+public class FormViewModelFactory
 {
-    public FormInfo CreateForm(Type? formType, string controllerName, string baseUrl)
+    private FormStore _formStore;
+    public FormViewModelFactory(FormStore formStore)
     {
+        _formStore = formStore;
+    }
+    
+    public FormViewModel CreateForm(string url)
+    {
+        Type formType = _formStore.GetFormTypeFromRoute(url);
+
         if (formType is null) throw new ArgumentNullException("formType");
-        FormInfo formInfo = new FormInfo();
+        FormViewModel formViewModel = new FormViewModel();
 
         // get name of form
-        Form formAttribute = (Form)formType.GetCustomAttributes(typeof(Form), true).First();
-        formInfo.Name = formAttribute.Name ?? formType.Name;
+        FormAttribute formAttributeAttribute = (FormAttribute)formType.GetCustomAttributes(typeof(FormAttribute), true).First();
+        formViewModel.Name = formAttributeAttribute.Name ?? formType.Name;
 
         // get inputs of form
         List<(string Label, string InputType, string Name)> inputs = new ();
         inputs.AddRange(ExtractInputs(formType));
-        formInfo.Inputs = inputs;
+        formViewModel.Inputs = inputs;
         
         // get route of form
-        formInfo.PostRoute = new FormAttributeFinder(formType).FindPattern(controllerName);
-
-        // get base url
-        formInfo.BaseUrl = baseUrl;
+        formViewModel.PostRoute = url;
         
-        return formInfo;
+        return formViewModel;
     }
 
     private IEnumerable<(string, string, string)> ExtractInputs(Type formType)
     {
         foreach (var property in formType.GetProperties())
         {
-            if (!property.GetCustomAttributes(true).Contains(typeof(Form.Ignore)))
+            if (!property.GetCustomAttributes(true).Contains(typeof(FormAttribute.Ignore)))
             {
-                Form.Input? input = property.GetCustomAttributes(typeof(Form.Input), true).OfType<Form.Input>()
+                FormAttribute.Input? input = property.GetCustomAttributes(typeof(FormAttribute.Input), true).OfType<FormAttribute.Input>()
                     .FirstOrDefault();
 
                 yield return

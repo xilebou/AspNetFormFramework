@@ -1,14 +1,15 @@
+using Microsoft.AspNetCore.Mvc;
+
 namespace AspNetFormFramework.FormGeneration;
 
-public class FormFiller<T>(HttpContext httpContext)
+public class FormFiller: IFormFiller
 {
-    private HttpContext _httpContext = httpContext;
 
-    public void Fill(T formModel)
+    public void Fill(object formModel, ControllerContext context)
     {
         foreach (var property in formModel.GetType().GetProperties())
         {
-            property.SetValue(formModel, ConvertStringTo(_httpContext.Request.Form[property.Name],  property.PropertyType));
+            property.SetValue(formModel, ConvertStringTo(context.HttpContext.Request.Form[property.Name],  property.PropertyType));
         }
     }
 

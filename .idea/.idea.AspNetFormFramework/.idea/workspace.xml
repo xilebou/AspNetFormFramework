@@ -6,16 +6,31 @@
     <projectFile profileName="http">TestApp/TestApp.csproj</projectFile>
     <projectFile profileName="https">TestApp/TestApp.csproj</projectFile>
   </component>
+  <component name="CMakeProjectFlavorService">
+    <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="466dfad6-b01a-4399-a630-78288b72088f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AspNetFormFramework/wwwroot/form.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestApp/Controller/IndexController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AspNetFormFramework/ApplicationFormExtension.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AspNetFormFramework/Exceptions/MissingFormStoreException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormStore.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/IFormFiller.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestApp/Forms/MyCustomForm.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AspNetFormFramework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AspNetFormFramework/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/AspNetFormFramework.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/AspNetFormFramework.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Controllers/BaseFormController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Controllers/BaseFormController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Controllers/HomeController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Controllers/IFormController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Controllers/IFormController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/Form.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormAttribute.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormFiller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormFiller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormInfoFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormViewModelFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormMapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/Utils/FormAttributeFinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/Utils/FormAttributeFinder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Forms/Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Forms/Test.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Views/Shared/Form.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Views/Shared/Form.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestApp/Forms/Bob.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestApp/Forms/Bob.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestApp/Controller/IndexController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestApp/Controller/TestController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestApp/Controller/TestController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestApp/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestApp/TestApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TestApp/TestApp.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,28 +64,15 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0e6ff1b8c27f45daa70c1b024a13700575200/cf/5b5294c7/DiagnosticListener.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/10b53626f63845e69485007c9b9fc08617200/b5/f010bcfb/WebApplicationBuilder.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/23f471448fc34b87b883e21e9dc0ecab1d3e00/59/c83553ef/AttributeRouteModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/23f471448fc34b87b883e21e9dc0ecab1d3e00/a9/65f74624/RouteAttribute.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/23f471448fc34b87b883e21e9dc0ecab1d3e00/ec/0c987a8f/IRouteTemplateProvider.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/23f471448fc34b87b883e21e9dc0ecab1d3e00/fa/4825a192/DefaultApplicationModelProvider.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2e87203df15b4d60b9c670dd76fb5ed8dba400/9b/82646ba7/Type.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2e87203df15b4d60b9c670dd76fb5ed8dba400/df/88a780ba/RuntimeTypeHandle.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a1acd29f341349028f9cc74e2cda718eae000/fc/6d5162bc/Controller.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a50b5499fda74579b4564e66b7ed071f9800/0c/8fdb3ae8/IRouter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b0e582f393b743d7b5aa6f3132356262cce00/04/4a6da4cd/RouteBase.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b0e582f393b743d7b5aa6f3132356262cce00/34/3ed8d50a/Route.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/eb33345a43bd4569b2d0a521668611b3d000/57/fc94d00a/TagHelperExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/eb37e0a67cf74b909bb6fad02b6037131d600/cf/eaae0bd9/IServiceCollection.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/eb37e0a67cf74b909bb6fad02b6037131d600/d2/09740114/ServiceDescriptor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AspNetFormFramework/ApplicationFormExtension.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AspNetFormFramework/Controllers/BaseFormController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AspNetFormFramework/FormGeneration/Form.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormInfoFactory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AspNetFormFramework/Exceptions/MissingFormStoreException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormStore.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AspNetFormFramework/FormGeneration/IFormFiller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AspNetFormFramework/FormGeneration/IFormMapper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AspNetFormFramework/FormGeneration/Utils/ControllerNameParser.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TestApp/Controller/IndexController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TestApp/Controller/TestController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TestApp/Forms/MyCustomForm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TestApp/Forms/NewForm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TestApp/Views/Index/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
@@ -83,22 +85,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.AspNetFormFramework: http.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Launch Settings Profile.TestApp: http.executor&quot;: &quot;Run&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/felix/RiderProjects/AspNetFormFramework&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.AspNetFormFramework: http.executor": "Run",
+    ".NET Launch Settings Profile.TestApp: http.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "cidr.known.project.marker": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/felix/RiderProjects/AspNetFormFramework",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.TestApp: http">
     <configuration name="AspNetFormFramework: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/AspNetFormFramework/AspNetFormFramework.csproj" />
@@ -185,6 +191,11 @@
       <workItem from="1772974492687" duration="15808000" />
       <workItem from="1773092973799" duration="8724000" />
       <workItem from="1773168997159" duration="512000" />
+      <workItem from="1773171090188" duration="199000" />
+      <workItem from="1773172265443" duration="8000" />
+      <workItem from="1773339083333" duration="2711000" />
+      <workItem from="1773350985272" duration="10000" />
+      <workItem from="1776902387631" duration="4402000" />
     </task>
     <task id="LOCAL-00001" summary="Make form actually work">
       <option name="closed" value="true" />
@@ -274,7 +285,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773099522108</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Make display changes">
+      <option name="closed" value="true" />
+      <created>1773171245098</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1773171245098</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +314,8 @@
     <MESSAGE value="Add test project" />
     <MESSAGE value="Remove boilerplate and unecessary generics" />
     <MESSAGE value="Add documentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add documentation" />
+    <MESSAGE value="Make display changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Make display changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

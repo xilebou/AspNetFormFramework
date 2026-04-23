@@ -6,10 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetFormFramework.FormGeneration;
 
-public class FormMapper(WebApplication app): IFormMapper
+public class FormMapper(WebApplication app, FormStore formStore): IFormMapper
 {
-    private static Dictionary<Type, Dictionary<string, Type>> _formTypes = new();
-    
+    private int _formAmount = 0;
     
     public void MapForms(Type controller)
     {
@@ -32,35 +31,13 @@ public class FormMapper(WebApplication app): IFormMapper
                 pattern: nameAndPattern.pattern + "/send"
             );
 
-            RegisterFormType(nameAndPattern, formType, controller);
+            RegisterFormType(nameAndPattern.pattern, formType);
         }
     }
 
-    private void RegisterFormType((string name, string pattern) nameAndPattern, Type formType, Type controllerType)
+    private void RegisterFormType(string route, Type formType)
     {
-        if (_formTypes.ContainsKey(controllerType)) // if form already contains controller
-        {
-            _formTypes[controllerType].Add(nameAndPattern.pattern, formType);
-        }
-        else // else create new dictionary for controller
-        {
-            Dictionary<string, Type> patternToTypes = new();
-            patternToTypes.Add(nameAndPattern.pattern, formType);
-            _formTypes.Add(controllerType, patternToTypes);
-        }
-    }
-
-    public static Type? GetFormType(Type controllerType, string pattern)
-    {
-        if (_formTypes.ContainsKey(controllerType))
-        {
-            if (_formTypes[controllerType].ContainsKey(pattern))
-            {
-                return _formTypes[controllerType][pattern];
-            }
-        }
-
-        return null;
+        formStore.RegisterForm(_formAmount++, route, formType);
     }
 
     private (string name, string pattern) GetNameAndPattern(Type type, string controllerName)
@@ -73,27 +50,12 @@ public class FormMapper(WebApplication app): IFormMapper
     {
         foreach (Type type in assembly.GetTypes()
                      .Where(t => t.GetCustomAttributes()
-                         .Any(attribute => attribute.GetType() == typeof(Form))))
+                         .Any(attribute => attribute.GetType() == typeof(FormAttribute))))
         {
-            if (type.GetCustomAttributes(typeof(Form), true).Length > 0)
+            if (type.GetCustomAttributes(typeof(FormAttribute), true).Length > 0)
             {
                 yield return type;
             }
         }
     }
 }
-
-// public class FormMapper: IFormMapper
-// {
-//     private FormMapper<IFormController> _formMapper;
-//
-//     public FormMapper(WebApplication app)
-//     {
-//         _formMapper = new FormMapper<IFormController>(app);
-//     }
-//
-//     public void MapForms()
-//     {
-//         _formMapper.MapForms();
-//     }
-// }

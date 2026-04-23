@@ -16,7 +16,7 @@ public class FormAttributeFinder
         string pattern = "/" + controllerName.ToLower() + "/";
         foreach (var attribute in attributes)
         {
-            if (attribute is Form formAttribute)
+            if (attribute is FormAttribute formAttribute)
             {
                 pattern += formAttribute.Route?.ToLower() ??  _formType.Name.ToLower();
             }
@@ -30,7 +30,7 @@ public class FormAttributeFinder
         string name = "";
         foreach (var attribute in attributes)
         {
-            if (attribute is Form formAttribute)
+            if (attribute is FormAttribute formAttribute)
             {
                 name += formAttribute.Name ?? _formType.Name;
             }

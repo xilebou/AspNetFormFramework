@@ -3,12 +3,12 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;
 namespace AspNetFormFramework.FormGeneration;
 
 [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = true)]
-public class Form : Attribute
+public class FormAttribute : Attribute
 {
     public string? Name { get; set; }
     public string? Route { get; set; }
     
-    public Form(string? name = null, string? url = null)
+    public FormAttribute(string? name = null, string? url = null)
     {
         Name = name;
         Route = url;

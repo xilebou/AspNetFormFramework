@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace AspNetFormFramework.FormGeneration;
+namespace AspNetFormFramework.Controllers;
 
 public interface IFormController
 {

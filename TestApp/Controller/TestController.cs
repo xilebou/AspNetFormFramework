@@ -12,15 +12,19 @@ namespace TestApp.Controller;
 public class TestController: BaseFormController
 {
     public const string Name = "Test";
+    private IFormFiller _formFiller;
 
+    public TestController([FromServices] IFormFiller formFiller, [FromServices] FormStore formStore) : base(formStore)
+    {
+        _formFiller = formFiller;
+    }
 
 
     [PostRouteFor(Name, typeof(Bob))]
     [HttpPost]
     public IActionResult GetBob(Bob bob)
     {
-        FormFiller<Bob> mapper = new FormFiller<Bob>(HttpContext);
-        mapper.Fill(bob);
+        _formFiller.Fill(bob, ControllerContext);
         return Json(bob);
     }
 

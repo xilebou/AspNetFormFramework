@@ -2,7 +2,7 @@ using AspNetFormFramework.FormGeneration;
 
 namespace AspNetFormFramework.Forms;
 
-using static FormGeneration.Form;
+using static FormGeneration.FormAttribute;
 
 [Form("TestingForm")]
 public class Test

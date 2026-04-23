@@ -1,4 +1,4 @@
-﻿@model AspNetFormFramework.ViewModels.FormInfo;
+﻿@model AspNetFormFramework.ViewModels.FormViewModel;
 
 <!DOCTYPE html>
 
@@ -13,7 +13,7 @@
     <div class="main">
         <h1>Voici le formulaire de @Model.Name</h1>
 
-        <form action="@Model.BaseUrl@(Model.PostRoute)/send" method="POST">
+        <form action="@Model.PostRoute/send" method="POST">
             @{
                 int i = 0;
 
