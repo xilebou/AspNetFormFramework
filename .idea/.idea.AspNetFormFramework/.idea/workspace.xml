@@ -11,26 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="466dfad6-b01a-4399-a630-78288b72088f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AspNetFormFramework/ApplicationFormExtension.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AspNetFormFramework/Exceptions/MissingFormStoreException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormStore.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/IFormFiller.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestApp/Forms/MyCustomForm.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AspNetFormFramework/RouteGeneration/PostRouteForConvention.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AspNetFormFramework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AspNetFormFramework/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Controllers/BaseFormController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Controllers/BaseFormController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Controllers/HomeController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Controllers/IFormController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Controllers/IFormController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/Form.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormAttribute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormFiller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormFiller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormInfoFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormViewModelFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormMapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/Utils/FormAttributeFinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/Utils/FormAttributeFinder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Forms/Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Forms/Test.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Views/Shared/Form.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Views/Shared/Form.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestApp/Controller/IndexController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/RouteGeneration/PostRouteFor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/RouteGeneration/PostRouteFor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestApp/Controller/TestController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestApp/Controller/TestController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestApp/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +49,8 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1b6ca575d8b044f4bb3dc543c8dbcdc31d3e00/73/1b655d26/RouteAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f7a55d00e53b4c3bb5691fbce4705b6083800/ad/88a759d2/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AspNetFormFramework/ApplicationFormExtension.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AspNetFormFramework/Controllers/BaseFormController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AspNetFormFramework/Exceptions/MissingFormStoreException.cs" root0="FORCE_HIGHLIGHTING" />
@@ -71,6 +58,7 @@
     <setting file="file://$PROJECT_DIR$/AspNetFormFramework/FormGeneration/IFormFiller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AspNetFormFramework/FormGeneration/IFormMapper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AspNetFormFramework/FormGeneration/Utils/ControllerNameParser.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AspNetFormFramework/RouteGeneration/PostRouteForConvention.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TestApp/Controller/TestController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TestApp/Forms/MyCustomForm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TestApp/Forms/NewForm.cs" root0="FORCE_HIGHLIGHTING" />
@@ -96,12 +84,13 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "XThreadsFramesViewSplitterKey": "0.34068626",
     "cidr.known.project.marker": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "/home/felix/RiderProjects/AspNetFormFramework",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -195,7 +184,8 @@
       <workItem from="1773172265443" duration="8000" />
       <workItem from="1773339083333" duration="2711000" />
       <workItem from="1773350985272" duration="10000" />
-      <workItem from="1776902387631" duration="4402000" />
+      <workItem from="1776902387631" duration="8487000" />
+      <workItem from="1776972676879" duration="3907000" />
     </task>
     <task id="LOCAL-00001" summary="Make form actually work">
       <option name="closed" value="true" />
@@ -293,7 +283,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773171245098</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Refactor: use dependency injection properly">
+      <option name="closed" value="true" />
+      <created>1776906821013</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1776906821013</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,7 +313,8 @@
     <MESSAGE value="Remove boilerplate and unecessary generics" />
     <MESSAGE value="Add documentation" />
     <MESSAGE value="Make display changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Make display changes" />
+    <MESSAGE value="Refactor: use dependency injection properly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor: use dependency injection properly" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

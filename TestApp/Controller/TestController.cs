@@ -11,7 +11,6 @@ namespace TestApp.Controller;
 
 public class TestController: BaseFormController
 {
-    public const string Name = "Test";
     private IFormFiller _formFiller;
 
     public TestController([FromServices] IFormFiller formFiller, [FromServices] FormStore formStore) : base(formStore)
@@ -20,7 +19,7 @@ public class TestController: BaseFormController
     }
 
 
-    [PostRouteFor(Name, typeof(Bob))]
+    [PostRouteFor(typeof(Bob))]
     [HttpPost]
     public IActionResult GetBob(Bob bob)
     {
