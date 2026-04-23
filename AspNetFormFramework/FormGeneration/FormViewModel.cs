@@ -1,4 +1,4 @@
-namespace AspNetFormFramework.ViewModels;
+namespace AspNetFormFramework.FormGeneration;
 
 public class FormViewModel
 {

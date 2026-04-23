@@ -1,4 +1,4 @@
-using AspNetFormFramework.FormGeneration;
+using AspNetFormFramework.Attribute;
 
 namespace TestApp.Forms;
 

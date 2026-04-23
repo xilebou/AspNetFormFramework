@@ -1,8 +1,8 @@
-using AspNetFormFramework.FormGeneration;
+using AspNetFormFramework.Attribute;
 
 namespace AspNetFormFramework.Forms;
 
-using static FormGeneration.FormAttribute;
+using static FormAttribute;
 
 [Form("TestingForm")]
 public class Test

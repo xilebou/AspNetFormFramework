@@ -1,4 +1,5 @@
-using AspNetFormFramework.FormGeneration.Utils;
+using AspNetFormFramework.Attribute;
+using AspNetFormFramework.FormGeneration;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 
 namespace AspNetFormFramework.RouteGeneration;
@@ -27,6 +28,6 @@ public class PostRouteForConvention : IApplicationModelConvention
 
     private string BuildPattern(Type controllerType, Type formType)
     {
-        return new FormAttributeFinder(formType).FindPattern(ControllerNameParser.GetControllerName(controllerType)) + "/send";
+        return new FormAttributeFinder(formType).FindPattern(controllerType.Name.Replace("Controller", "")) + "/send";
     }
 }

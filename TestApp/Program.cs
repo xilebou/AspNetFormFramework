@@ -1,6 +1,7 @@
 using AspNetFormFramework;
 using AspNetFormFramework.FormGeneration;
 using AspNetFormFramework.RouteGeneration;
+using AspNetFormFramework.Services;
 using TestApp.Controller;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -1,6 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
-
-namespace AspNetFormFramework.FormGeneration;
+namespace AspNetFormFramework.Services;
 
 public class FormStore
 {

@@ -1,10 +1,8 @@
-using System.Dynamic;
 using System.Reflection;
-using System.Reflection.Emit;
-using AspNetFormFramework.FormGeneration.Utils;
-using Microsoft.AspNetCore.Mvc;
+using AspNetFormFramework.Attribute;
+using AspNetFormFramework.FormGeneration;
 
-namespace AspNetFormFramework.FormGeneration;
+namespace AspNetFormFramework.Services;
 
 public class FormMapper(WebApplication app, FormStore formStore): IFormMapper
 {
@@ -16,7 +14,7 @@ public class FormMapper(WebApplication app, FormStore formStore): IFormMapper
         
         foreach (Type formType in GetTypesWithFormAttribute(assembly))
         {
-            string controllerName = ControllerNameParser.GetControllerName(controller);
+            string controllerName = controller.Name.Replace("Controller", "");
             (string name, string pattern) nameAndPattern = GetNameAndPattern(formType, controllerName);
 
             app.MapControllerRoute(
@@ -24,12 +22,6 @@ public class FormMapper(WebApplication app, FormStore formStore): IFormMapper
                 pattern: nameAndPattern.pattern,
                 defaults: new { controller = controllerName, action = "Form" }
             );
-
-
-            // app.MapControllerRoute(
-            //     name: "Send" + nameAndPattern.name,
-            //     pattern: nameAndPattern.pattern.ToLower() + "/send"
-            // );
 
             RegisterFormType(nameAndPattern.pattern, formType);
         }

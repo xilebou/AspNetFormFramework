@@ -1,6 +1,7 @@
 using System.Reflection;
+using AspNetFormFramework.Attribute;
 
-namespace AspNetFormFramework.FormGeneration.Utils;
+namespace AspNetFormFramework.FormGeneration;
 
 public class FormAttributeFinder
 {

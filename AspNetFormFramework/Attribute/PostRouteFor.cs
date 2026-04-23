@@ -1,12 +1,9 @@
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Routing;
 
-namespace AspNetFormFramework.RouteGeneration;
+namespace AspNetFormFramework.Attribute;
 
 [AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
-public class PostRouteFor : Attribute, IRouteTemplateProvider, IActionHttpMethodProvider
+public class PostRouteFor : System.Attribute, IRouteTemplateProvider, IActionHttpMethodProvider
 {
     public string? Template { get; set; }
     public int? Order { get; } = 0;

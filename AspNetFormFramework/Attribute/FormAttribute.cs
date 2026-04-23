@@ -1,9 +1,7 @@
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
-
-namespace AspNetFormFramework.FormGeneration;
+namespace AspNetFormFramework.Attribute;
 
 [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = true)]
-public class FormAttribute : Attribute
+public class FormAttribute : System.Attribute
 {
     public string? Name { get; set; }
     public string? Route { get; set; }
@@ -15,7 +13,7 @@ public class FormAttribute : Attribute
     }
 
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
-    public class Input : Attribute
+    public class Input : System.Attribute
     {
         public string? InputType { get; set; }
         public string? Label { get; set; }
@@ -32,7 +30,7 @@ public class FormAttribute : Attribute
         }
     }
 
-    public class Ignore : Attribute
+    public class Ignore : System.Attribute
     {
         
     }
