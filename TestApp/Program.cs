@@ -9,7 +9,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews(
     options => options.Conventions.Add(new PostRouteForConvention()));
-builder.Services.AddScoped<IFormFiller, FormFiller>();
 builder.Services.AddSingleton<FormStore>();
 
 var app = builder.Build();

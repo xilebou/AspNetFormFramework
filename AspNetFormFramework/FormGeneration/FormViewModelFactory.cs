@@ -55,20 +55,17 @@ public class FormViewModelFactory
 
     private string GetInputTypeFromReturnType(PropertyInfo property)
     {
-        Type inputReturnType = property.PropertyType;
-        switch (inputReturnType.Name)
-        {
-            case "String": return "text";
-            case "Double": return "number";
-            case "Decimal": return "number";
-            case "Int32": return "number";
-            case "Int64": return "number";
-            case "Int16": return "number";
-            case "Int8": return "number";
-            case "Boolean": return "boolean";
-            case "DateTime": return "date";
-            case "Guid": return "guid";
-            default: return "text";
-        }
+        Type t = Nullable.GetUnderlyingType(property.PropertyType) ?? property.PropertyType;
+        
+        if (t == typeof(string)) return "text";
+        if (t == typeof(int)) return "number";
+        if (t == typeof(long)) return "number";
+        if (t == typeof(double)) return "decimal";
+        if (t == typeof(float)) return "decimal";
+        if (t == typeof(bool)) return "boolean";
+        if (t == typeof(DateTime)) return "date";
+        if (t == typeof(Guid)) return "guid";
+
+        return "text";
     }
 }

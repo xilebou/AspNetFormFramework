@@ -8,19 +8,16 @@ namespace TestApp.Controller;
 
 public class TestController: BaseFormController
 {
-    private IFormFiller _formFiller;
 
-    public TestController([FromServices] IFormFiller formFiller, [FromServices] FormStore formStore) : base(formStore)
+
+    public TestController([FromServices] FormStore formStore) : base(formStore)
     {
-        _formFiller = formFiller;
     }
 
 
     [PostRouteFor(typeof(NouveauFormulaire))]
-    // [Route("test/nouveauformulaire/send")]
     public IActionResult GetBob(NouveauFormulaire nouveauFormulaire)
     {
-        _formFiller.Fill(nouveauFormulaire, ControllerContext);
         Console.WriteLine("BONJOUR BOB!");
         return Json(nouveauFormulaire);
     }

@@ -11,11 +11,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="466dfad6-b01a-4399-a630-78288b72088f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AspNetFormFramework/RouteGeneration/PostRouteForConvention.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AspNetFormFramework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AspNetFormFramework/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/RouteGeneration/PostRouteFor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/RouteGeneration/PostRouteFor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormFiller.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormViewModelFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormViewModelFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Services/IFormFiller.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/TestApp/Controller/TestController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestApp/Controller/TestController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestApp/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,10 +77,11 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     ".NET Launch Settings Profile.AspNetFormFramework: http.executor": "Run",
-    ".NET Launch Settings Profile.TestApp: http.executor": "Run",
+    ".NET Launch Settings Profile.TestApp: http.executor": "Debug",
     "DefaultHtmlFileTemplate": "HTML File",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
@@ -185,7 +187,7 @@
       <workItem from="1773339083333" duration="2711000" />
       <workItem from="1773350985272" duration="10000" />
       <workItem from="1776902387631" duration="8487000" />
-      <workItem from="1776972676879" duration="3907000" />
+      <workItem from="1776972676879" duration="7801000" />
     </task>
     <task id="LOCAL-00001" summary="Make form actually work">
       <option name="closed" value="true" />
@@ -291,7 +293,31 @@
       <option name="project" value="LOCAL" />
       <updated>1776906821013</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Change way attribute are created">
+      <option name="closed" value="true" />
+      <created>1776976775958</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1776976775958</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Make form post endpoints work properly">
+      <option name="closed" value="true" />
+      <created>1776983411580</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1776983411580</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Refactor">
+      <option name="closed" value="true" />
+      <created>1776983850946</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1776983850946</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,6 +325,25 @@
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ID_WIDTH">
+                <map>
+                  <entry key="Table.Default.Author.ColumnIdWidth" value="75" />
+                  <entry key="Table.Default.Date.ColumnIdWidth" value="80" />
+                  <entry key="Table.GitHub.CommitStatus.ColumnIdWidth" value="79" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Make form actually work" />
@@ -314,7 +359,10 @@
     <MESSAGE value="Add documentation" />
     <MESSAGE value="Make display changes" />
     <MESSAGE value="Refactor: use dependency injection properly" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor: use dependency injection properly" />
+    <MESSAGE value="Change way attribute are created" />
+    <MESSAGE value="Make form post endpoints work properly" />
+    <MESSAGE value="Refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -331,6 +379,24 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/AspNetFormFramework/Attribute/PostRouteForConvention.cs</url>
+          <line>13</line>
+          <properties documentPath="$PROJECT_DIR$/AspNetFormFramework/RouteGeneration/PostRouteForConvention.cs" containingFunctionPresentation="Method 'Apply'">
+            <startOffsets>
+              <option value="459" />
+            </startOffsets>
+            <endOffsets>
+              <option value="529" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/AspNetFormFramework/Views/Shared/Form.cshtml</url>
+          <line>22</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
