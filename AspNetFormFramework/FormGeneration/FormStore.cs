@@ -14,12 +14,12 @@ public class FormStore
 
     public Type GetFormTypeFromRoute(string route)
     {
-        return FormFromRoute[route];
+        return FormFromRoute[route.ToLower()];
     }
 
     public void RegisterForm(long id, string route, Type formType)
     {
         FormFromIds.Add(id, formType);
-        FormFromRoute.Add(route, formType);
+        FormFromRoute.Add(route.ToLower(), formType);
     }
 }

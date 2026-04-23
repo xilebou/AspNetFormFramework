@@ -3,7 +3,7 @@ using AspNetFormFramework.FormGeneration;
 namespace TestApp.Forms;
 
 [Form]
-public class Bob
+public class NouveauFormulaire
 {
     public string? VotreNom { get; set; }
     public string? VotrePrenom { get; set; }

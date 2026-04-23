@@ -19,12 +19,13 @@ public class TestController: BaseFormController
     }
 
 
-    [PostRouteFor(typeof(Bob))]
-    [HttpPost]
-    public IActionResult GetBob(Bob bob)
+    [PostRouteFor(typeof(NouveauFormulaire))]
+    // [Route("test/nouveauformulaire/send")]
+    public IActionResult GetBob(NouveauFormulaire nouveauFormulaire)
     {
-        _formFiller.Fill(bob, ControllerContext);
-        return Json(bob);
+        _formFiller.Fill(nouveauFormulaire, ControllerContext);
+        Console.WriteLine("BONJOUR BOB!");
+        return Json(nouveauFormulaire);
     }
 
     [Route("myRoute")]

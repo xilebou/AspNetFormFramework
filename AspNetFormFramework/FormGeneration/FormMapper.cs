@@ -26,10 +26,10 @@ public class FormMapper(WebApplication app, FormStore formStore): IFormMapper
             );
 
 
-            app.MapControllerRoute(
-                name: "Send" + nameAndPattern.name,
-                pattern: nameAndPattern.pattern + "/send"
-            );
+            // app.MapControllerRoute(
+            //     name: "Send" + nameAndPattern.name,
+            //     pattern: nameAndPattern.pattern.ToLower() + "/send"
+            // );
 
             RegisterFormType(nameAndPattern.pattern, formType);
         }

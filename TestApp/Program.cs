@@ -1,11 +1,13 @@
 using AspNetFormFramework;
 using AspNetFormFramework.FormGeneration;
+using AspNetFormFramework.RouteGeneration;
 using TestApp.Controller;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(
+    options => options.Conventions.Add(new PostRouteForConvention()));
 builder.Services.AddScoped<IFormFiller, FormFiller>();
 builder.Services.AddSingleton<FormStore>();
 

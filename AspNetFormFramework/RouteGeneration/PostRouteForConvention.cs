@@ -11,16 +11,22 @@ public class PostRouteForConvention : IApplicationModelConvention
         {
             foreach (var action in controller.Actions)
             {
-                var attr = action.Attributes.OfType<PostRouteFor>().FirstOrDefault();
-                if (attr == null) continue;
+                var route = action.Attributes.OfType<PostRouteFor>().FirstOrDefault();
 
-                attr.Template = BuildPattern(controller.ControllerType, attr.FormType);
+                route?.Template = BuildPattern(controller.ControllerType, route.FormType);
+                foreach (var selector in action.Selectors)
+                {
+                    selector.AttributeRouteModel = new AttributeRouteModel
+                    {
+                        Template = route?.Template,
+                    };
+                }
             }
         }
     }
 
     private string BuildPattern(Type controllerType, Type formType)
     {
-        return new FormAttributeFinder(formType).FindPattern(controllerType.Name);
+        return new FormAttributeFinder(formType).FindPattern(ControllerNameParser.GetControllerName(controllerType)) + "/send";
     }
 }

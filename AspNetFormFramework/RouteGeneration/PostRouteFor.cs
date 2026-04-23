@@ -6,22 +6,15 @@ using Microsoft.AspNetCore.Mvc.Routing;
 namespace AspNetFormFramework.RouteGeneration;
 
 [AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
-public class PostRouteFor : Attribute, IRouteTemplateProvider
+public class PostRouteFor : Attribute, IRouteTemplateProvider, IActionHttpMethodProvider
 {
     public string? Template { get; set; }
-    public int? Order { get; }
-    public string? Name { get; }
+    public int? Order { get; } = 0;
+    public string? Name { get; } = null;
     public Type FormType { get; set; }
-
+    public IEnumerable<string> HttpMethods { get; } = ["POST"];
     public PostRouteFor(Type type)
     {
         FormType = type;
     }
-
-    private static string GetPattern(Type type)
-    {
-        return "";
-    }
-
-
 }
