@@ -23,7 +23,7 @@ public class FormAttribute : System.Attribute
         public const string Email = "email";
         public const string Number = "number";
 
-        public Input(string? label = null, string? inputType = Text)
+        public Input(string? label = null, string? inputType = null)
         {
             Label = label;
             InputType = inputType;

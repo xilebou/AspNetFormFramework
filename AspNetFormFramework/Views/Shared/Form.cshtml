@@ -1,4 +1,5 @@
-﻿@model AspNetFormFramework.FormGeneration.FormViewModel;
+﻿@using Microsoft.AspNetCore.Mvc.ModelBinding
+@model AspNetFormFramework.FormGeneration.FormViewModel;
 
 <!DOCTYPE html>
 
@@ -16,11 +17,14 @@
         <form action="@Model.PostRoute/send" method="POST">
             @{
                 int i = 0;
-
                 foreach (var input in Model.Inputs ?? new())
                 {
                     <label for="@i">@input.label</label>
-                    <input id="@i" type="@input.inputType" name="@input.name"/>
+                    <input id="@i" type="@input.inputType" name="@input.name" value="@input.value"/>
+                    @if (ViewData.ModelState[input.name]?.Errors.Count > 0)
+                    {
+                        <span>@ViewData.ModelState[input.name]?.Errors[0].ErrorMessage</span>
+                    }
                     <br/>
                     i++;
                 }

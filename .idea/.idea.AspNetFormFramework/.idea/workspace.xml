@@ -12,10 +12,15 @@
   <component name="ChangeListManager">
     <list default="true" id="466dfad6-b01a-4399-a630-78288b72088f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AspNetFormFramework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AspNetFormFramework/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormFiller.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Attribute/FormAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Attribute/FormAttribute.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Controllers/BaseFormController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Controllers/BaseFormController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormViewModelFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormViewModelFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Services/IFormFiller.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetFormFramework/Views/Shared/Form.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetFormFramework/Views/Shared/Form.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestApp/Controller/TestController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestApp/Controller/TestController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestApp/Forms/MyCustomForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestApp/Forms/MyCustomForm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestApp/Forms/NewForm.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestApp/Forms/NouveauFormulaire.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/TestApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestApp/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,14 +60,9 @@
     <setting file="file://$PROJECT_DIR$/AspNetFormFramework/ApplicationFormExtension.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AspNetFormFramework/Controllers/BaseFormController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AspNetFormFramework/Exceptions/MissingFormStoreException.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AspNetFormFramework/FormGeneration/FormStore.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AspNetFormFramework/FormGeneration/IFormFiller.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AspNetFormFramework/FormGeneration/IFormMapper.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AspNetFormFramework/FormGeneration/Utils/ControllerNameParser.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AspNetFormFramework/RouteGeneration/PostRouteForConvention.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AspNetFormFramework/FormValidation/FormValidationMiddleware.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TestApp/Controller/TestController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TestApp/Forms/MyCustomForm.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TestApp/Forms/NewForm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TestApp/Views/Index/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -86,7 +86,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "XThreadsFramesViewSplitterKey": "0.34068626",
+    "XThreadsFramesViewSplitterKey": "0.5305343",
     "cidr.known.project.marker": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "master",
@@ -187,7 +187,7 @@
       <workItem from="1773339083333" duration="2711000" />
       <workItem from="1773350985272" duration="10000" />
       <workItem from="1776902387631" duration="8487000" />
-      <workItem from="1776972676879" duration="7801000" />
+      <workItem from="1776972676879" duration="15394000" />
     </task>
     <task id="LOCAL-00001" summary="Make form actually work">
       <option name="closed" value="true" />
@@ -317,7 +317,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776983850946</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Remove useless formfiller">
+      <option name="closed" value="true" />
+      <created>1776984811181</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1776984811181</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,7 +370,8 @@
     <MESSAGE value="Change way attribute are created" />
     <MESSAGE value="Make form post endpoints work properly" />
     <MESSAGE value="Refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
+    <MESSAGE value="Remove useless formfiller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove useless formfiller" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -393,9 +402,17 @@
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/AspNetFormFramework/Views/Shared/Form.cshtml</url>
-          <line>22</line>
-          <option name="timeStamp" value="17" />
+          <url>file://$PROJECT_DIR$/TestApp/Controller/TestController.cs</url>
+          <line>25</line>
+          <properties documentPath="$PROJECT_DIR$/TestApp/Controller/TestController.cs" containingFunctionPresentation="Method 'GetForm'">
+            <startOffsets>
+              <option value="806" />
+            </startOffsets>
+            <endOffsets>
+              <option value="841" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

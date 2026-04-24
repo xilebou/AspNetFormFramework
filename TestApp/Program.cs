@@ -1,5 +1,4 @@
 using AspNetFormFramework;
-using AspNetFormFramework.FormGeneration;
 using AspNetFormFramework.RouteGeneration;
 using AspNetFormFramework.Services;
 using TestApp.Controller;
@@ -10,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews(
     options => options.Conventions.Add(new PostRouteForConvention()));
 builder.Services.AddSingleton<FormStore>();
+builder.Services.AddValidation();
 
 var app = builder.Build();
 
@@ -17,6 +17,7 @@ var app = builder.Build();
 
 app.UseRouting();
 
+// app.UseMiddleware<>();  
 app.UseForms<TestController>(); // <-- the key part
 app.MapStaticAssets();
 
