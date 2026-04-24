@@ -12,10 +12,20 @@ Create a Form Model in the Form directory at the root of your project using the 
 To Map the endpoints of your forms automatically:
 
 ### Program.cs file
+add these services:
 ```
-FormMapper mapper = new FormMapper(webApplication); //pass in your web application
-mapper.MapForms(typeof()) // the type of your controller
+builder.Services.AddControllersWithViews(
+    options => options.Conventions.Add(new PostRouteForConvention()));
+builder.Services.AddSingleton<FormStore>();
+builder.Services.AddValidation();
 ```
+do this to enable forms on specific controller:
+```
+app.UseForms<Controller>(); 
+```
+The ```PostRouteForConvention``` class is used to create the post route mappings accordingly. If not used, the post routes will not work!
+The ```FormStore``` stores all mapped routes to their linked form accordingly. It can be accessed any time.
+
 
 ### Controller file
 There is the interface IFormController if you want to implement your own controller and mappings. However, you might find it easier to use the ```BaseFormController``` class. This class streamlines the endpoint creation, however its approach is a lot less flexible.
