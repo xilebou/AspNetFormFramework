@@ -34,4 +34,13 @@ public abstract class BaseFormController : Controller, IFormController
 
         return View(formViewModel);
     }
+
+    [NonAction]
+    public IActionResult ReenterForm(object formModel)
+    {
+        Response.StatusCode = 400;
+        FormViewModel formViewModel = new FormViewModelFactory(_formStore).CreateForm(Request.Path.Value.Replace("/send", ""), formModel);
+        return View("Form", formViewModel);
+    }
+
 }
