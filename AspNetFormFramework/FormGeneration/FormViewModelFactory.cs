@@ -39,9 +39,12 @@ public class FormViewModelFactory
         FormViewModel formViewModel = new FormViewModel();
 
         // get name of form
-        FormAttribute formAttributeAttribute =
+        FormAttribute formAttribute =
             (FormAttribute)formType.GetCustomAttributes(typeof(FormAttribute), true).First();
-        formViewModel.Name = formAttributeAttribute.Name ?? formType.Name;
+        formViewModel.Name = formAttribute.Name ?? formType.Name;
+        
+        // get title of form
+        formViewModel.Title = formAttribute.Title ?? formType.Name;
 
         // get inputs of form
         List<(string Label, string InputType, string Name, string Value)> inputs = new();
@@ -49,7 +52,7 @@ public class FormViewModelFactory
         formViewModel.Inputs = inputs;
 
         // get route of form
-        formViewModel.PostRoute = url;
+        formViewModel.PostRoute = url +"/send";
 
         return formViewModel;
     }

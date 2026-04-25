@@ -5,11 +5,13 @@ public class FormAttribute : System.Attribute
 {
     public string? Name { get; set; }
     public string? Route { get; set; }
+    public string? Title { get; set; }
     
-    public FormAttribute(string? name = null, string? url = null)
+    public FormAttribute(string? name = null, string? url = null, string? title = null)
     {
         Name = name;
         Route = url;
+        Title = title;
     }
 
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]

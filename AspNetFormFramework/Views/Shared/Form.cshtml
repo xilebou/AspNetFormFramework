@@ -12,9 +12,9 @@
 <div class="row">
     <div></div>
     <div class="main">
-        <h1>Voici le formulaire de @Model.Name</h1>
+        <h1>@Model.Title</h1>
 
-        <form action="@Model.PostRoute/send" method="POST">
+        <form action="@Model.PostRoute" method="POST">
             @{
                 int i = 0;
                 foreach (var input in Model.Inputs ?? new())

@@ -6,5 +6,5 @@ public class FormViewModel
     public string? PostRoute { get; set; }
     public string? FormId { get; set; }
     public List<(string label, string inputType, string name, string value)>? Inputs { get; set; }
-    
+    public string Title { get; set; } = string.Empty;
 }
